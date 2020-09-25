@@ -4,101 +4,123 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mi Blog</title>
+    <link rel="shortcut icon" href="./img/FavIconW.ico" type="image/x-icon" sizes="32x32">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
 </head>
 <body class="bg-dark text-white">
     <header class="text-center">
-        <!--
-            Logo
-        -->
-        <img src="./img/LogoW.png" width="300">
+        <img class="m-3" src="./img/LogoW.png" width="300">
     </header>
-    <nav class="">
-        <!--
-            Navegación simple
-        -->
-        <ul class="nav">
-                <li class="h4 px-3"><a href="#">Principal</a></li>
-                <li class="h4 px-3"><a href="#">Ayuda</a></li>
-                <li class="h4 px-3"><a href="#">Contacto</a></li>
-        </ul>
-    </nav>
     <div>
-        <article>
-            <section>
-                <h2>Sobre Mí</h2>
-                <p>Soy <strong>Carlos Lavieri</strong> mejor conocido como <b>"Lav"</b>, un joven que quiere aprender a programar y desarrollar paginas web. En estos momentos me encuentro aprendiendo en <strong><a href="https://www.sololearn.com/">SoloLearn</a></strong> lo basico para alcanzar lo que quiero.</p>
-            </section>
-            <section>
-                <h2>Mis Habilidades</h2>
-                <ul>
-                    <li><a href="https://es.wikipedia.org/wiki/C%2B%2B"><b>C++</b></a></li>
-                    <progress max="100" value="75"></progress>
-                    <li><a href="https://es.wikipedia.org/wiki/HTML"><b>HTML</b></a></li>
-                    <progress max="100" value="100"></progress>
-                    <li><a href="https://es.wikipedia.org/wiki/Hoja_de_estilos_en_cascada"><b>CSS</b></a></li>
-                    <progress max="100" value="15"></progress>
-                    <li><a href="https://es.wikipedia.org/wiki/JavaScript"><b>JS</b></a></li>
-                    <progress max="100" value="0"></progress>
-                </ul>
-            </section>
-            <section>
-                <h2>Mi Horario</h2>
-                <table border="1">
-                    <tr>
-                    <th>Dia</th>
-                    <th>Lunes</th>
-                    <th>Mastes</th>
-                    <th>Miercoles</th>
-                    <th>Jueves</th>
-                    <th>Viernes</th>
-                    </tr>
-                    <tr>
-                        <th>9:00-12:00</th>
-                        <td colspan="5">Aprendo</td>
-                    </tr>
-                    <tr>
-                        <th>12:00-1:00</th>
-                        <td colspan="5">Almuerzo</td>
-                    </tr>
-                    <tr>
-                        <th>1:00-4:00</th>
-                        <td colspan="5">Práctico</td>
-                    </tr>
-                    <tr>
-                        <th>7:00-10:00</th>
-                        <td colspan="5">Juego / Descanso</td>
-                    </tr>
-                </table>
-            </section>
-        </article>
-        <aside>
-            <section>
-                <h2>Media</h2>
-                <iframe src="https://www.youtube.com/embed/Q6_5InVJZ88" allowfullscreen frameborder="0"></iframe>
-            </section>
-            <section>
-                <h2>Portafolio</h2>
-                <p><strong><a href="#">Visita mis trabajos</a></strong></p>
-            </section>
-            <section>
-                <h2>Feedback</h2>
-                <form>
-                    <label>Nombre:</label><br>
-                    <input type="text" name="Nombre"><br/>
-                    <label>Correo:</label><br>
-                    <input type="email" name="Correo" required><br/>
-                    <label>Mensaje:</label><br>
-                    <textarea name="Mensaje"></textarea><br/>
-                    <input type="submit" value="ENVIAR">
-                </form>
-            </section>
-        </aside>
-        <footer class="p-0 text-center">
-            <p><span>Existiendo desde 2000-2020</span></p>
-            <img src="./img/IconW.png" width="50px">
-        </footer>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-secondary">
+            <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active"><a class="nav-link" href="#">Principal</a></li>
+                    <li class="nav-item active"><a class="nav-link" href="#">Ayuda</a></li>
+                    <li class="nav-item active"><a class="nav-link" href="#">Contacto</a></li>
+            </ul>
+        </nav>
     </div>
+    <div class="my-3 container">
+        <div class="row">
+            <article class="col">
+                <section class="my-2">
+                    <h2 class="text-center">Sobre Mí</h2>
+                    <p>Soy <strong>Carlos Lavieri</strong> mejor conocido como <b>"Lav"</b>, un joven que quiere aprender a programar y desarrollar paginas web. En estos momentos me encuentro aprendiendo en <strong><a class="badge badge-light" href="https://www.sololearn.com/">SoloLearn</a></strong> lo basico para alcanzar lo que quiero.</p>
+                </section>
+                <section class="my-2">
+                    <div class="text-center">
+                        <h2>Mis Habilidades</h2>
+                        <a class="badge badge-primary" href="https://es.wikipedia.org/wiki/C%2B%2B"><b>C++</b></a>
+                        <br>
+                            <div class="progress">
+                                <div class="progress-bar" role="progressbar" style="width: 60%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
+                            </div>
+                        <br>
+                        <a class="badge badge-danger" href="https://es.wikipedia.org/wiki/HTML"><b>HTML</b></a>                        <br>
+                            <div class="progress">
+                                <div class="progress-bar bg-danger" role="progressbar" style="width: 100%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
+                            </div>
+                            <br>
+                        <a class="badge badge-info" href="https://es.wikipedia.org/wiki/Hoja_de_estilos_en_cascada"><b>CSS</b></a>
+                        <br>
+                            <div class="progress">
+                                <div class="progress-bar bg-info" role="progressbar" style="width: 100%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
+                            </div>
+                        <br>
+                        <a class="badge badge-warning" href="https://es.wikipedia.org/wiki/JavaScript"><b>JS</b></a>
+                            <br>
+                            <div class="progress">
+                                <div class="progress-bar bg-warning" role="progressbar" style="width: 80%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
+                            </div>
+                            <br>
+                    </div>
+                </section>
+                <section class="my-2 text-center">
+                    <h2>Mi Horario</h2>
+                    <table class="table table-dark">
+                        <tr>
+                            <th scope="col">Dia</th>
+                            <th scope="col">Lunes</th>
+                            <th scope="col">Mastes</th>
+                            <th scope="col">Miercoles</th>
+                            <th scope="col">Jueves</th>
+                            <th scope="col">Viernes</th>
+                        </tr>
+                        <tr>
+                            <th scope="row">9:00-12:00</th>
+                            <td colspan="5">Aprendo</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">12:00-1:00</th>
+                            <td colspan="5">Almuerzo</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">1:00-4:00</th>
+                            <td colspan="5">Práctico</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">7:00-10:00</th>
+                            <td colspan="5">Juego / Descanso</td>
+                        </tr>
+                    </table>
+                </section>
+            </article>
+            <aside class="col">
+                <section class="my-2 text-center">
+                    <h2>Media</h2>
+                    <div class="embed-responsive embed-responsive-16by9">
+                        <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/Q6_5InVJZ88" allowfullscreen></iframe>
+                    </div>
+                </section>
+                <section class="my-2 text-center">
+                    <h2>Portafolio</h2>
+                    <p><strong><a href="#">Visita mis trabajos</a></strong></p>
+                </section>
+                <section class="my-2 text-center">
+                    <h2>Feedback</h2>
+                    <form>
+                        <div class="form-group">
+                            <label>Nombre:</label>
+                            <input class="form-control" type="text" name="Nombre" placeholder="Name">
+                        </div>
+                        <div class="form-group">
+                            <label>Correo:</label>
+                            <input class="form-control" type="email" name="Correo" required placeholder="name@example.com">
+                        </div>
+                        <div class="form-group">
+                            <label>Mensaje:</label>
+                            <textarea class="form-control" name="Mensaje" rows="3"></textarea><br/>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Enviar</button>
+                    </form>
+                </section>
+            </aside>
+        </div>
+    </div>
+    <footer class="p-0 bg-secondary text-center clearfix">
+        <p class="mb-0"><small>Existiendo desde 2000-2020</small></p>
+        <img src="./img/IconW.png" width="50px">
+    </footer>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
