@@ -1,0 +1,24 @@
+{
+  "name": "miprimerapagina",
+  "version": "0.0.2",
+  "description": "mi primera pagina usando bootstrap 4",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Lav-i-Eri/Blog.git"
+  },
+  "keywords": [
+    "pages",
+    "bootstrap",
+    "html"
+  ],
+  "author": "Lav",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Lav-i-Eri/Blog/issues"
+  },
+  "homepage": "https://github.com/Lav-i-Eri/Blog#readme"
+}
