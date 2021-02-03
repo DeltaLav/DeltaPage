@@ -1,0 +1,26 @@
+[
+    {
+        "name": "STARSHINE",
+        "type": "Tienda",
+        "keys": [
+            "Pulseras",
+            "Collares",
+            "Tobilleras"
+        ]
+    },
+    {
+        "name": "Milagros Orellana",
+        "type": "Arte",
+        "keys": [
+            "Acuarelas",
+            "Fotografia"
+        ]
+    },
+    {
+        "name": "Mariangy Martinez",
+        "type": "Personal",
+        "keys": [
+            "Blog"
+        ]
+    }
+]

@@ -1,0 +1,65 @@
+{
+    "name":"Carlos",
+    "lastName":"Lavieri",
+    "birthday":{
+        "day":10,
+        "month":4,
+        "year":2000
+    },
+    "social":{
+        "facebook":"",
+        "instagram":"",
+        "twitter": ""
+    },
+    "tecnologias":[
+        {
+            "name": "HTML",
+            "level": "Intermedio",
+            "format":"Lenguaje de Marcado",
+            "url": "https://es.wikipedia.org/wiki/HTML",
+            "certificate": true
+        },
+        {
+            "name": "CSS",
+            "level": "Básico",
+            "format":"Lenguaje de Diseño",
+            "url": "https://es.wikipedia.org/wiki/Hoja_de_estilos_en_cascada",
+            "certificate":true
+        },
+        {
+            "name": "JS",
+            "level": "Intermedio",
+            "format":"Lenguaje de Programación",
+            "url": "https://es.wikipedia.org/wiki/JavaScript",
+            "certificate":true
+        },
+        {
+            "name": "C++",
+            "level": "Intermedio",
+            "format":"Lenguaje de Programación",
+            "url": "https://es.wikipedia.org/wiki/C%2B%2B",
+            "certificate":true
+        },
+        {
+            "name": "Git",
+            "level": "Básico",
+            "format":"Software",
+            "url": "https://git-scm.com",
+            "certificate":false
+        },
+        {
+            "name": "Bootstrap",
+            "level": "Intermedio",
+            "format":"Framework de CSS",
+            "url": "https://getbootstrap.com",
+            "certificate":false
+        },
+        {
+            "name": "Node.js",
+            "level": "Básico",
+            "format":"Framework de JS",
+            "url": "https://nodejs.org",
+            "certificate":false
+        }
+    ]
+}
