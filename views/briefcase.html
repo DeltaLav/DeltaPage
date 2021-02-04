@@ -35,7 +35,27 @@
             <h1 class="display-6">Portafolio</h1>
         </section>
     </header>
-
+    <div class="container text-center">
+        <div class="row" id="pages">
+            <div class="col-sm">
+                <div class="card bg-secondary">
+                    <div class="card-header">
+                        <h3 class="card-title">${item.name}</h3>
+                    </div>
+                    <div class="card-body">
+                        <img src="../img/logo-pages/${item.name}.png" class="rounded-circle" height="100px" alt="${item.name}" title="${item.name}">
+                        <h4 class="card-subtitle">${item.type}</h4>
+                        <p class="card-text" id="keys${i}"></p>
+                    </div>
+                    <div class="card-footer">
+                        <div class="btn-group">
+                            <a href="${item.url}" class="btn btn-success ">Ir a Página</a>    
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
     <footer class="pt-3 fixed-bottom">
         <div class="bg-secondary text-center">
             <img src="../img/IconW.png" width="30px">

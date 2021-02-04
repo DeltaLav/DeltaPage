@@ -6,21 +6,24 @@
             "Pulseras",
             "Collares",
             "Tobilleras"
-        ]
+        ],
+        "url": "https://deltalav.github.io/Starshine/"
     },
     {
         "name": "Milagros Orellana",
         "type": "Arte",
         "keys": [
             "Acuarelas",
-            "Fotografia"
-        ]
+            "Fotografía"
+        ],
+        "url": "https://deltalav.github.io/MilagrosOrellana/"
     },
     {
         "name": "Mariangy Martinez",
         "type": "Personal",
         "keys": [
             "Blog"
-        ]
+        ],
+        "url": "https://deltalav.github.io/MariangyMartinez/"
     }
 ]
