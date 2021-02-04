@@ -1,0 +1,19 @@
+#load {
+    background-color: rgba(155, 155, 155, 0.9);
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    -webkit-transition: all 1ms ease;
+    -o-transition: all 1ms ease;
+    transition: all 1ms ease;
+    z-index: 10000;
+}
+
+#loading {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+}
