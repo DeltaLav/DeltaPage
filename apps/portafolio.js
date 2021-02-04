@@ -22,7 +22,7 @@ function traerDatos(){
             let i = 0;
             for(let item of datos){
                 pages.innerHTML += `
-                    <div class="col-sm">
+                    <div class="col-sm py-1">
                         <div class="card bg-secondary">
                             <div class="card-header">
                                 <h3 class="card-title">${item.name}</h3>

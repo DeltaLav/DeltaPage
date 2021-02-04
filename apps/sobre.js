@@ -111,14 +111,15 @@ function traerDatos(){
                 //     }
                 // }
                 hc.innerHTML += `
-                                <div class="col-sm py-1">
-                                    <div class="card bg-secondary">
-                                        <div class="card-body">
-                                            <h6 class="card-title">${item.name} > <span class="badge bg-success">${item.level}</span></h6>
-                                            <p class="card-text">${item.format}</p>
-                                        </div>
-                                    </div>
-                                </div>`;
+                    <div class="col-sm py-1">
+                        <div class="card bg-secondary">
+                            <div class="card-body">
+                                <h6 class="card-title">
+                                    <a href="${item.url}"><img src="../img/logo-tech/${item.name}.png" width="40px" alt="${item.name}"></a> ${item.name} > <span class="badge bg-success">${item.level}</span></h6>
+                                <p class="card-text">${item.format}</p>
+                            </div>
+                        </div>
+                    </div>`;
                 i++;
                 console.log(i);
             }
