@@ -17,3 +17,9 @@
     bottom: 0;
     margin: auto;
 }
+
+#bg-code {
+    height: 100%;
+    width: 100%;
+    position: fixed;
+}

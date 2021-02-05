@@ -1,0 +1,14 @@
+[
+    {
+        "index.html":"/Proyects/Web/Blog/index.html",
+        "about.html":"/Proyects/Web/Blog/views/about.html",
+        "briefcase.html":"/Proyects/Web/Blog/views/briefcase.html",
+        "contactme.html":"/Proyects/Web/Blog/views/contactme.html"
+    },
+    {
+        "index.html":"/DeltaPage/index.html",
+        "about.html":"/DeltaPage/views/about.html",
+        "briefcase.html":"/DeltaPage/views/briefcase.html",
+        "contactme.html":"/DeltaPage/views/contactme.html"
+    }
+]

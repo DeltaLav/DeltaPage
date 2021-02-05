@@ -1,6 +1,6 @@
 console.log("App On");
 
-function traerDatos(){
+function show_aboutData(){
 
     const xhttp = new XMLHttpRequest();
 
@@ -39,7 +39,7 @@ function traerDatos(){
                     `;
 
                     band = true;
-                    console.log("open row in "+i, band);
+                    console.log("open row in "+i, band, item.name);
                 }
                 if(j == 0 && band == false){
                     hc.innerHTML += `
@@ -58,7 +58,7 @@ function traerDatos(){
 
                     j = 3;
                     band = true;
-                    console.log("close row in "+i+" "+j, band)
+                    console.log("close row in "+i+" "+j, band, item.name)
                 }
                 if(band == false){
                     hc.innerHTML += `
@@ -73,7 +73,7 @@ function traerDatos(){
                         </div>`;
 
                     band = true;
-                    console.log("medio "+i, band)
+                    console.log("medio "+i, band, item.name)
                 }
                 
                 band = false;
@@ -87,4 +87,4 @@ function traerDatos(){
     }
 }
 
-traerDatos();
+show_aboutData();

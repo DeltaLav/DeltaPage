@@ -1,6 +1,6 @@
-console.log("App On");
+console.log("APP ON");
 
-function traerDatos(){
+function show_portafolioData(){
 
     const xhttp = new XMLHttpRequest();
 
@@ -14,7 +14,7 @@ function traerDatos(){
             // console.log(this.responseText);
             let datos = JSON.parse(this.responseText);
 
-            console.log(datos);
+            // console.log(datos);
             
             let pages = document.querySelector('#pages');
             pages.innerHTML = '';
@@ -42,13 +42,14 @@ function traerDatos(){
                 `;
                 let key = document.querySelector('#keys'+i);
                 key.innerHTML = '';
-                for(j of item.keys){
+                for(let j of item.keys){
                     key.innerHTML += `| ${j} | `; 
                 }
+                console.log(i, item.name);
                 i++;
             }
         }
     }
 }
 
-traerDatos();
+show_portafolioData();
