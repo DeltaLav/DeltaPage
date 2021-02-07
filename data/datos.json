@@ -67,6 +67,13 @@
             "format":"Framework de JS",
             "url":"https://expressjs.com",
             "certificate":false
+        },
+        {
+            "name":"JSON",
+            "level":"Básico",
+            "format":"Lenguaje de Marcado",
+            "url":"https://www.json.org/json-en.html",
+            "certificate":false
         }
     ]
 }

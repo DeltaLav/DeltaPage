@@ -1,7 +1,7 @@
 {
   "name": "deltapage",
-  "version": "0.3.0",
-  "description": "página personal",
+  "version": "0.5.0",
+  "description": "Página personal, mi portafolio digital",
   "main": "index.html",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -11,9 +11,11 @@
     "url": "git+https://github.com/DeltaLav/Blog.git"
   },
   "keywords": [
-    "pages",
-    "bootstrap",
-    "html"
+    "Page",
+    "Bootstrap",
+    "HTML",
+    "JS",
+    "JSON"
   ],
   "author": "Lav",
   "license": "ISC",

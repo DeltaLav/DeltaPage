@@ -1,14 +1,16 @@
 [
     {
-        "index.html":"/Proyects/Web/Blog/index.html",
-        "about.html":"/Proyects/Web/Blog/views/about.html",
-        "briefcase.html":"/Proyects/Web/Blog/views/briefcase.html",
-        "contactme.html":"/Proyects/Web/Blog/views/contactme.html"
+        "index":"/Proyects/Web/Blog/index.html",
+        "home": "/Proyects/Web/Blog/views/home.html",
+        "about":"/Proyects/Web/Blog/views/about.html",
+        "briefcase":"/Proyects/Web/Blog/views/briefcase.html",
+        "contactme":"/Proyects/Web/Blog/views/contactme.html"
     },
     {
-        "index.html":"/DeltaPage/index.html",
-        "about.html":"/DeltaPage/views/about.html",
-        "briefcase.html":"/DeltaPage/views/briefcase.html",
-        "contactme.html":"/DeltaPage/views/contactme.html"
+        "index":"/DeltaPage/index.html",
+        "home": "/DeltaPage/views/home.html",
+        "about":"/DeltaPage/views/about.html",
+        "briefcase":"/DeltaPage/views/briefcase.html",
+        "contactme":"/DeltaPage/views/contactme.html"
     }
 ]
