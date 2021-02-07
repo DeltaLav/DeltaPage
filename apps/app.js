@@ -216,7 +216,7 @@ function show_socialmediaData(){
             for(let item of datos.social){
                 socialmedia.innerHTML += `
                     <a href="${item.url}">
-                        <img src="../img/socialmedia-icons/${item.name}.png" class="d-inline img-fluid" width="30px" alt="${item.name}">
+                        <img src="../img/socialmedia-icons/${item.name}.png" class="d-inline img-fluid" width="35px" alt="${item.name}">
                     </a>
                 `;
                 // console.log(item);
@@ -259,13 +259,13 @@ function footer(active, disabled){
         <div class="bg-secondary">
             <div class="container py-4">
                 <div class="row font-monospace py-4">
-                    <div class="col-md text-center">
+                    <div class="col-lg py-1 text-center">
                         <h6>Redes Sociales</h6>
                         <div class="clearfix" id="socialmedia">
                             
                         </div>
                     </div>
-                    <div class="col-sm">
+                    <div class="col-sm py-1">
                         <h6 class="text-center">Links</h6>
                         <ul class="list-group">
                             <a href="./home.html" class="list-group-item list-group-item-action list-group-item-success ${active[0]} ${disabled[0]}">Home</a>
@@ -274,7 +274,7 @@ function footer(active, disabled){
                             <a href="./help.html" class="list-group-item list-group-item-action list-group-item-success ${active[3]} ${disabled[3]}">Help</a>
                         </ul>
                     </div>
-                    <div class="col text-center">
+                    <div class="col-sm py-1 text-center">
                         <h6>Features</h6>
                         <div>
                             <p>
@@ -287,7 +287,9 @@ function footer(active, disabled){
                 </div>
             </div>
             <div class="text-center">
-                <img src="../img/logo/IconW.png" width="30px">
+                <a href="../index.html">
+                    <img src="../img/logo/IconW.png" width="30px">
+                </a>
             </div>
         </div>
     `;
