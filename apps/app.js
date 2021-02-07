@@ -13,7 +13,7 @@ function show_urlData(urlA){
         if(this.readyState == 4 && this.status == 200){
             // console.log(this.responseText);
             let url = JSON.parse(this.responseText);
-            let host = 0;
+            let host = 1;
             let active = [];
             
             switch (urlA) {
