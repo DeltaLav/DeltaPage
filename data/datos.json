@@ -6,11 +6,29 @@
         "month":4,
         "year":2000
     },
-    "social":{
-        "facebook":"",
-        "instagram":"",
-        "twitter": ""
-    },
+    "social":[
+        {
+            "name":"Facebook",
+            "url":"https://www.facebook.com/DeltaLav.Web"
+        },
+        {
+            "name":"Instagram",
+            "url":"https://www.instagram.com/cdlc_0410/"
+        },
+        {
+            "name":"Twitter", 
+            "url":"https://twitter.com/lav0410"
+        }
+    ],
+    "languages":[
+        {
+            "name":"Español",
+            "level":{
+                "escrito":"Nativo",
+                "oral":"Nativo"
+            }
+        }
+    ],
     "tecnologias":[
         {
             "name": "HTML",

@@ -28,10 +28,9 @@
                     </button>
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                            <li class="nav-item"><a class="nav-link" href="./views/about.html">Sobre Mí</a></li>
-                            <li class="nav-item"><a class="nav-link" href="./views/briefcase.html">Portafolio</a></li>
+                            <li class="nav-item"><a class="nav-link" href="./about.html">Sobre Mí</a></li>
+                            <li class="nav-item"><a class="nav-link" href="./briefcase.html">Portafolio</a></li>
                             <li class="nav-item"><a class="nav-link" href="./help.html">Ayuda</a></li>
-                            <li class="nav-item"><a class="nav-link" href="./contactme.html">Contacto</a></li>
                         </ul>
                     </div>
                 </div>
@@ -54,7 +53,7 @@
                     </div>
                     <div class="card-footer">
                         <div class="btn-group">
-                            <a href="../views/briefcase.html" class="card-link btn btn-success">Portafolio</a>
+                            <a href="./briefcase.html" class="card-link btn btn-success">Portafolio</a>
                         </div>
                     </div>
                 </div>
@@ -94,9 +93,42 @@
             </div>
         </div>
     </div>
-    <footer class="pt-3">
-        <div class="bg-secondary text-center">
-            <img src="../img/logo/IconW.png" width="30px">
+    <footer class="pt-3" id="footer">
+        <div class="bg-secondary">
+            <div class="container py-4">
+                <div class="row font-monospace py-4">
+                    <div class="col-md text-center">
+                        <h6>Redes Sociales</h6>
+                        <div class="clearfix" id="socialmedia">
+                            <a href="${}">
+                                <img src="${}" class="d-inline img-fluid" width="30px" alt="${}">
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-sm">
+                        <h6 class="text-center">Links</h6>
+                        <ul class="list-group">
+                            <a href="./home.html" class="list-group-item list-group-item-action list-group-item-success ${active[0]} ${disabled[3]}">Home</a>
+                            <a href="./about.html" class="list-group-item list-group-item-action list-group-item-success ${active[1]} ${disabled[3]}">Sobre Mí</a>
+                            <a href="./briefcase.html" class="list-group-item list-group-item-action list-group-item-success ${active[2]} ${disabled[3]}">Portafolio</a>
+                            <a href="./help.html" class="list-group-item list-group-item-action list-group-item-success ${active[3]} ${disabled[3]}">Help</a>
+                        </ul>
+                    </div>
+                    <div class="col text-center">
+                        <h6>Features</h6>
+                        <div>
+                            <p>
+                                Social Media Icons made by <a href="https://www.freepik.com" title="Freepik"><span class="badge rounded-pill bg-success">Freepik</span></a> from <a href="https://www.flaticon.com/" title="Flaticon"> <span class="badge rounded-pill bg-success">flaticon.com</span></a>
+                                <img src="../img/icons/heart.png" class="d-inline" alt="Heart" width="20px">
+                            </p>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center">
+                <img src="../img/logo/IconW.png" width="30px">
+            </div>
         </div>
     </footer>
     <script src="../apps/app.js"></script>

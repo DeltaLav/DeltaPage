@@ -13,34 +13,39 @@ function show_urlData(urlA){
         if(this.readyState == 4 && this.status == 200){
             // console.log(this.responseText);
             let url = JSON.parse(this.responseText);
+            /// Cambiar al subir
             let host = 1;
-            let active = [];
+            let active = [], disabled = [];
             
             switch (urlA) {
                 case url[host].home:
                     
-                    navegation(active);
+                    active[0] = `active`;
+                    disabled[3] = `disabled`;
+                    navegation(active, disabled);
+                    footer(active, disabled);
                     console.log(`Home ${true}`);
                     break;
                 case url[host].about:
 
-                    active[0] = `active`;
-                    navegation(active);
+                    active[1] = `active`;
+                    disabled[3] = `disabled`;
+                    navegation(active, disabled);
+                    footer(active, disabled);
                     show_aboutData();
                     console.log(`About ${true}`);
                     break;
                 case url[host].briefcase:
 
-                    active[1] = `active`;
-                    navegation(active);
+                    active[2] = `active`;
+                    disabled[3] = `disabled`;
+                    navegation(active, disabled);
+                    footer(active, disabled);
                     show_portafolioData();
                     console.log(`Briefcase ${true}`);
                     break;
-                case url[host].contactme:
-
-                    active[2] = `active`;
-                    navegation(active);
-                    console.log(`Contactme ${true}`);
+                case url[host].help:
+                    
                     break;
 
                 default:
@@ -192,7 +197,35 @@ function show_portafolioData(){
     }
 }
 
-function navegation(active){
+function show_socialmediaData(){
+    const xhttp = new XMLHttpRequest();
+
+    xhttp.open('GET','../data/datos.json', true);
+
+    xhttp.send();
+
+    xhttp.onreadystatechange = function(){
+
+        if(this.readyState == 4 && this.status == 200){
+            // console.log(this.responseText);
+            let datos = JSON.parse(this.responseText);
+
+            let socialmedia = document.querySelector('#socialmedia');
+            socialmedia.innerHTML = ``;
+
+            for(let item of datos.social){
+                socialmedia.innerHTML += `
+                    <a href="${item.url}">
+                        <img src="../img/socialmedia-icons/${item.name}.png" class="d-inline img-fluid" width="30px" alt="${item.name}">
+                    </a>
+                `;
+                // console.log(item);
+            }
+        }
+    }
+}
+
+function navegation(active, disable){
     var navegacion = document.querySelector('#navegation');
 
     navegacion.innerHTML = '';
@@ -208,15 +241,57 @@ function navegation(active){
                     </button>
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                            <li class="nav-item "><a class="nav-link ${active[0]}" href="./about.html">Sobre Mí</a></li>
-                            <li class="nav-item"><a class="nav-link ${active[1]}" href="./briefcase.html">Portafolio</a></li>
-                            <!-- <li class="nav-item"><a class="nav-link" href="./help.html">Ayuda</a></li> -->
-                            <li class="nav-item"><a class="nav-link ${active[2]}" href="./contactme.html">Contacto</a></li>
+                            <li class="nav-item"><a class="nav-link ${active[1]} ${disable[1]}" href="./about.html">Sobre Mí</a></li>
+                            <li class="nav-item"><a class="nav-link ${active[2]} ${disable[2]}" href="./briefcase.html">Portafolio</a></li>
+                            <li class="nav-item"><a class="nav-link ${active[3]} ${disable[3]}" href="./help.html">Ayuda</a></li>
                         </ul>
                     </div>
                 </div>
             </nav>
     `;
+}
+
+function footer(active, disabled){
+    var footer = document.querySelector('#footer');
+
+    footer.innerHTML = '';
+    footer.innerHTML += `
+        <div class="bg-secondary">
+            <div class="container py-4">
+                <div class="row font-monospace py-4">
+                    <div class="col-md text-center">
+                        <h6>Redes Sociales</h6>
+                        <div class="clearfix" id="socialmedia">
+                            
+                        </div>
+                    </div>
+                    <div class="col-sm">
+                        <h6 class="text-center">Links</h6>
+                        <ul class="list-group">
+                            <a href="./home.html" class="list-group-item list-group-item-action list-group-item-success ${active[0]} ${disabled[0]}">Home</a>
+                            <a href="./about.html" class="list-group-item list-group-item-action list-group-item-success ${active[1]} ${disabled[1]}">Sobre Mí</a>
+                            <a href="./briefcase.html" class="list-group-item list-group-item-action list-group-item-success ${active[2]} ${disabled[2]}">Portafolio</a>
+                            <a href="./help.html" class="list-group-item list-group-item-action list-group-item-success ${active[3]} ${disabled[3]}">Help</a>
+                        </ul>
+                    </div>
+                    <div class="col text-center">
+                        <h6>Features</h6>
+                        <div>
+                            <p>
+                                Social Media Icons made by <a href="https://www.freepik.com" title="Freepik"><span class="badge rounded-pill bg-success">Freepik</span></a> from <a href="https://www.flaticon.com/" title="Flaticon"> <span class="badge rounded-pill bg-success">flaticon.com</span></a>
+                                <img src="../img/icons/heart.png" class="d-inline" alt="Heart" width="20px">
+                            </p>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center">
+                <img src="../img/logo/IconW.png" width="30px">
+            </div>
+        </div>
+    `;
+    show_socialmediaData();
 }
 
 window.onload = function(){
