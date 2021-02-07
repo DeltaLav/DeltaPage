@@ -71,13 +71,15 @@ function show_aboutData(){
         if(this.readyState == 4 && this.status == 200){
             // console.log(this.responseText);
             let datos = JSON.parse(this.responseText);
+            let birthday = datos.birthday;
+            let age = calcAge(birthday);
 
             let about = document.querySelector('#about');
             about.innerHTML = '';
             let hc = document.querySelector('#hc');
             hc.innerHTML = '';
 
-            about.innerHTML = `<p>Soy <strong>${datos.name} ${datos.lastName}</strong> mejor conocido como <b>"Lav"</b>, un joven que quiere aprender a programar y desarrollar paginas web. En estos momentos me encuentro aprendiendo en <strong><a class="badge bg-success" href="https://www.sololearn.com/">SoloLearn</a></strong> lo básico para alcanzar lo que quiero.</p>`
+            about.innerHTML = `<p>Soy <strong>${datos.name} ${datos.lastName}</strong> tengo ${age} años, un joven que quiere aprender a programar y desarrollar paginas web. En estos momentos me encuentro aprendiendo en <strong><a class="badge bg-success" href="https://www.sololearn.com/">SoloLearn</a></strong> lo básico para alcanzar lo que quiero.</p>`
 
             var i = 0, j = 2, band = false;
             for(let item of datos.tecnologias){
@@ -294,6 +296,25 @@ function footer(active, disabled){
         </div>
     `;
     show_socialmediaData();
+}
+
+function calcAge(birthday){
+    let date = new Date;
+    let age;
+    if(date.getDay() >= birthday.day){
+        if(date.getMonth() >= birthday.month){
+            age = date.getFullYear() - birthday.year;
+            return age;
+        }
+        else{
+            age = date.getFullYear() - birthday.year
+            return age-1;
+        }
+    }
+    else{
+        age = date.getFullYear() - birthday.year
+        return age-1;
+    }
 }
 
 window.onload = function(){
