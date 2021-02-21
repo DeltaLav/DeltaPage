@@ -1,0 +1,46 @@
+[
+    {
+        "index":{
+            "title":"Delta Lav",
+            "pathname":"/index.html"
+        },
+        "home":{
+            "title":"Home",
+            "pathname":"/views/home.html"
+        },
+        "about":{
+            "title":"Sobre Mí",
+            "pathname":"/views/about.html"
+        },
+        "briefcase":{
+            "title":"Portafolio",
+            "pathname":"/views/briefcase.html"
+        },
+        "help":{
+            "title":"Ayuda",
+            "pathname":"/views/help.html"
+        }
+    },
+    {
+        "index":{
+            "title":"Delta Lav",
+            "pathname":"/DeltaPage/index.html"
+        },
+        "home":{
+            "title":"Home",
+            "pathname":"/DeltaPage/views/home.html"
+        },
+        "about":{
+            "title":"Sobre Mí",
+            "pathname":"/DeltaPage/views/about.html"
+        },
+        "briefcase":{
+            "title":"Portafolio",
+            "pathname":"/DeltaPage/views/briefcase.html"
+        },
+        "help":{
+            "title":"Ayuda",
+            "pathname":"/DeltaPage/views/help.html"
+        }
+    }
+]

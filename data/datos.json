@@ -89,8 +89,15 @@
         {
             "name":"JSON",
             "level":"Básico",
-            "format":"Lenguaje de Marcado",
+            "format":"Lenguaje de intercambio de Datos",
             "url":"https://www.json.org/json-en.html",
+            "certificate":false
+        },
+        {
+            "name":"JQUERY",
+            "level":"Básico",
+            "format":"Librería de JS",
+            "url":"https://jquery.com",
             "certificate":false
         }
     ]

@@ -1,11 +1,21 @@
-console.log("Page Load ON")
+console.log("App ON")
+// variable para comparar el hosting y ejecutar las rutas espesificas
 var urlA = window.location.pathname;
 
-function show_urlData(urlA){
+/* Variable host para usar las rutas del JSON */
+if(window.location.host === 'deltalav.github.io'){
+    var host = 1;
+}
+else{
+    var host = 0;
+}
+
+// muestra las url del JSON (urls.json)
+function show_urlData(urlA, host){
     
     const xhttp = new XMLHttpRequest();
 
-    xhttp.open('GET','../data/url_pages.json', true);
+    xhttp.open('GET','../data/urls.json', true);
 
     xhttp.send();
 
@@ -13,43 +23,43 @@ function show_urlData(urlA){
         if(this.readyState == 4 && this.status == 200){
             // console.log(this.responseText);
             let url = JSON.parse(this.responseText);
-            /// Cambiar al subir
-            let host = 1;
             let active = [], disabled = [];
             
+            // metodos para cada ruta especifica
             switch (urlA) {
-                case url[host].home:
+                case url[host].index.pathname:
+
+                break;
+                case url[host].home.pathname:
                     
                     active[0] = `active`;
                     disabled[3] = `disabled`;
-                    navegation(active, disabled);
-                    footer(active, disabled);
-                    console.log(`Home ${true}`);
+                    template(url[host].home.title, active, disabled);
                     break;
-                case url[host].about:
+                case url[host].about.pathname:
 
                     active[1] = `active`;
                     disabled[3] = `disabled`;
-                    navegation(active, disabled);
-                    footer(active, disabled);
+                    template(url[host].about.title, active, disabled);
                     show_aboutData();
-                    console.log(`About ${true}`);
                     break;
-                case url[host].briefcase:
+                case url[host].briefcase.pathname:
 
                     active[2] = `active`;
                     disabled[3] = `disabled`;
-                    navegation(active, disabled);
-                    footer(active, disabled);
+                    template(url[host].briefcase.title, active, disabled);
                     show_portafolioData();
-                    console.log(`Briefcase ${true}`);
                     break;
-                case url[host].help:
+                case url[host].help.pathname:
                     
+                    active[0] = `active`;
+                    disabled[3] = `disabled`;
+                    template(url[host].help.title, active, disabled);
+                    test()
                     break;
 
                 default:
-                    console.log(`Default ${false}`)
+                    console.log(`Default ${true}`);
                     break;
             }
 
@@ -58,6 +68,7 @@ function show_urlData(urlA){
     }
 }
 
+// muestra los datos contenidos en datos.json para el about.html
 function show_aboutData(){
 
     const xhttp = new XMLHttpRequest();
@@ -74,71 +85,51 @@ function show_aboutData(){
             let birthday = datos.birthday;
             let age = calcAge(birthday);
 
-            let about = document.querySelector('#about');
-            about.innerHTML = '';
-            let hc = document.querySelector('#hc');
-            hc.innerHTML = '';
+            about = `<p>Soy <strong>${datos.name} ${datos.lastName}</strong> tengo ${age} años, un joven que quiere aprender a programar y desarrollar paginas web. En estos momentos me encuentro aprendiendo en <strong><a class="badge bg-success" href="https://www.sololearn.com/">SoloLearn</a></strong> lo básico para alcanzar lo que quiero.</p>`
 
-            about.innerHTML = `<p>Soy <strong>${datos.name} ${datos.lastName}</strong> tengo ${age} años, un joven que quiere aprender a programar y desarrollar paginas web. En estos momentos me encuentro aprendiendo en <strong><a class="badge bg-success" href="https://www.sololearn.com/">SoloLearn</a></strong> lo básico para alcanzar lo que quiero.</p>`
+            $('#about').html(about);
 
-            var i = 0, j = 2, band = false;
+            
+            let certificateImg = `
+            
+            `;
+            var i = 0, j = 0;
             for(let item of datos.tecnologias){
-                if((i == 0 || i%3 == 0) && band == false){
-                    hc.innerHTML += `
-                    <div class="row">
-                        <div class="col py-1">
-                            <div class="card bg-secondary">
-                                <div class="card-body">
-                                    <h6 class="card-title">
-                                        <a href="${item.url}"><img src="../img/logo-tech/${item.name}.png" width="40px" alt="${item.name}"></a>
-                                        ${item.name} > <span class="badge bg-success">${item.level}</span></h6>
-                                    <p class="card-text">${item.format}</p>
-                                </div>
-                            </div>
-                        </div>
-                    `;
+                let certificate = '';
 
-                    band = true;
-                    console.log(`open row in ${i+1}, ${item.name}. ${band}`);
+                if(item.certificate == true){
+                    certificate = `
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-patch-check-fill" viewBox="0 0 16 16">
+                            <path d="M10.067.87a2.89 2.89 0 0 0-4.134 0l-.622.638-.89-.011a2.89 2.89 0 0 0-2.924 2.924l.01.89-.636.622a2.89 2.89 0 0 0 0 4.134l.637.622-.011.89a2.89 2.89 0 0 0 2.924 2.924l.89-.01.622.636a2.89 2.89 0 0 0 4.134 0l.622-.637.89.011a2.89 2.89 0 0 0 2.924-2.924l-.01-.89.636-.622a2.89 2.89 0 0 0 0-4.134l-.637-.622.011-.89a2.89 2.89 0 0 0-2.924-2.924l-.89.01-.622-.636zm.287 5.984l-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 1 1 .708-.708L7 8.793l2.646-2.647a.5.5 0 0 1 .708.708z"/>
+                        </svg>
+                    `;
                 }
-                if(j == 0 && band == false){
-                    hc.innerHTML += `
-                        <div class="col py-1">
-                            <div class="card bg-secondary">
-                                <div class="card-body">
-                                    <h6 class="card-title">
-                                        <a href="${item.url}"><img src="../img/logo-tech/${item.name}.png" width="40px" alt="${item.name}"></a>
-                                        ${item.name} > <span class="badge bg-success">${item.level}</span></h6>
-                                    <p class="card-text">${item.format}</p>
-                                </div>
-                            </div>
+                else{
+                    certificate = '';
+                }
+                let card = `
+                    <div class="card bg-secondary" style="width: 100%; ;height: 100%">
+                        <div class="card-body">
+                            <h6 class="card-title m-3">
+                                <a href="${item.url}"><img src="../img/logo-tech/${item.name}.png" width="40px" alt="${item.name}"></a>
+                                ${item.name} ${certificate} > <span class="badge bg-success">${item.level}</span></h6>
+                            <p class="card-text">${item.format}</p>
                         </div>
                     </div>
-                    `;
+                `;
+                if(i == 0 || i%3 == 0){
+                    $('#hc').append(`<div class="row p-1" id="row${j}">`)
+                    console.log(`row ${j}`,true)
 
-                    j = 3;
-                    band = true;
-                    console.log(`close row in ${i+1} and ${j}, ${item.name}. ${band}`)
+                    $(`#row${j}`).append(`<div class="col-sm m-2">${card}`)
+                    console.log(`col ${i}`, true)
+                    j++;
                 }
-                if(band == false){
-                    hc.innerHTML += `
-                        <div class="col py-1">
-                            <div class="card bg-secondary">
-                                <div class="card-body">
-                                    <h6 class="card-title">
-                                        <a href="${item.url}"><img src="../img/logo-tech/${item.name}.png" width="40px" alt="${item.name}"></a> ${item.name} > <span class="badge bg-success">${item.level}</span></h6>
-                                    <p class="card-text">${item.format}</p>
-                                </div>
-                            </div>
-                        </div>`;
-
-                    band = true;
-                    console.log(`middle in ${i+1}, ${item.name}. ${band}`)
+                else{
+                    $(`#row${j-1}`).append(`<div class="col-sm m-2">${card}`)
+                    console.log(`col ${i}`, true)
                 }
-                
-                band = false;
                 i++;
-                j--;
                 // console.log(item);
             }
 
@@ -147,6 +138,7 @@ function show_aboutData(){
     }
 }
 
+// muestra los datos contenidos en pages.json para el briefcase.html
 function show_portafolioData(){
 
     const xhttp = new XMLHttpRequest();
@@ -162,32 +154,39 @@ function show_portafolioData(){
             let datos = JSON.parse(this.responseText);
 
             // console.log(datos);
-            
-            let pages = document.querySelector('#pages');
-            pages.innerHTML = '';
 
-            let i = 0;
+            let i = 0, j= 0;
             for(let item of datos){
-                pages.innerHTML += `
-                    <div class="col-sm py-1">
-                        <div class="card bg-secondary">
-                            <div class="card-header">
-                                <h3 class="card-title">${item.name}</h3>
-                            </div>
-                            <div class="card-body">
-                                <img src="../img/logo-pages/${item.name}.png" class="rounded-circle" height="100px" alt="${item.name}" title="${item.name}">
-                                <h4 class="card-subtitle">${item.type}</h4>
-                                <p class="card-text" id="keys${i}"></p>
-                            </div>
-                            <div class="card-footer">
-                                <div class="btn-group">
-                                    <a href="${item.url}" class="btn btn-success ">Ir a Página</a>    
-                                </div>
+                let card = `
+                    <div class="card bg-secondary" style="width: 100%; ;height: 100%">
+                        <div class="card-header">
+                            <h3 class="card-title">${item.name}</h3>
+                        </div>
+                        <div class="card-body">
+                            <img src="../img/logo-pages/${item.name}.png" class="rounded-circle" height="100px" alt="${item.name}" title="${item.name}">
+                            <h4 class="card-subtitle">${item.type}</h4>
+                            <p class="card-text" id="keys${i}"></p>
+                        </div>
+                        <div class="card-footer">
+                            <div class="btn-group">
+                                <a href="${item.url}" class="btn btn-success ">Ir a Página</a>    
                             </div>
                         </div>
                     </div>
                 `;
-                let key = document.querySelector('#keys'+i);
+                if(i == 0 || i%3 == 0){
+                    $('#pages').append(`<div class="row p-1" id="row${j}">`)
+                    console.log(`row ${j}`,true)
+
+                    $(`#row${j}`).append(`<div class="col-sm m-2">${card}`)
+                    console.log(`col ${i}`, true)
+                    j++;
+                }
+                else{
+                    $(`#row${j-1}`).append(`<div class="col-sm m-2">${card}`)
+                    console.log(`col ${i}`, true)
+                }
+                let key = document.querySelector(`#keys${i}`);
                 key.innerHTML = '';
                 for(let j of item.keys){
                     key.innerHTML += `| ${j} | `; 
@@ -199,6 +198,7 @@ function show_portafolioData(){
     }
 }
 
+// muestra los datos contenidos en datos.json para el footer de los html
 function show_socialmediaData(){
     const xhttp = new XMLHttpRequest();
 
@@ -227,6 +227,7 @@ function show_socialmediaData(){
     }
 }
 
+// genera navbar de los html
 function navegation(active, disable){
     var navegacion = document.querySelector('#navegation');
 
@@ -236,7 +237,7 @@ function navegation(active, disable){
                 <div class="container-fluid">
                     <a class="navbar-brand" href="./home.html">
                         Delta Lav
-                        <img src="../img/logo/IconW.png" width="30px">
+                        <img src="../img/logo/IconW.png" class="logo" width="30px">
                     </a>
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
@@ -253,6 +254,7 @@ function navegation(active, disable){
     `;
 }
 
+// genera el footer de los html
 function footer(active, disabled){
     var footer = document.querySelector('#footer');
 
@@ -290,7 +292,7 @@ function footer(active, disabled){
             </div>
             <div class="text-center">
                 <a href="../index.html">
-                    <img src="../img/logo/IconW.png" width="30px">
+                    <img src="../img/logo/IconW.png" class="logo" width="30px">
                 </a>
             </div>
         </div>
@@ -298,6 +300,36 @@ function footer(active, disabled){
     show_socialmediaData();
 }
 
+// genera el head y script de los html
+function head_footer(title){
+    var head = document.querySelector('#meta_data');
+    head.innerHTML = `
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>${title}</title>
+        <link rel="icon" type="image/png" sizes="96x96" href="../img/logo/favicon-96x96.png">
+        <link rel="stylesheet" href="../style/main.css">
+        <!-- CSS Bootstrap -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+        <!-- JQUERY -->
+        <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    `;
+    var script = document.querySelector('#script');
+    script.innerHTML = `
+        <!-- JavaScript Bundle with Popper Bootstrap -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
+    `;
+}
+
+// funcion que comprime los head, navbar, footer y script
+function template(title, active, disabled){
+    head_footer(title);
+    navegation(active, disabled);
+    footer(active, disabled);
+    console.log(`Template ON in ${title}`)
+}
+
+// calcula la edad del datos.json
 function calcAge(birthday){
     let date = new Date;
     let age;
@@ -317,6 +349,7 @@ function calcAge(birthday){
     }
 }
 
+// prepara la pagina mientras carga y hace invisible el spinner
 window.onload = function(){
     var contenedor = document.getElementById('load');
 
@@ -324,4 +357,5 @@ window.onload = function(){
     contenedor.style.opacity = '0';
 }
 
-show_urlData(urlA);
+// funcion que se ejecuta
+show_urlData(urlA, host);
